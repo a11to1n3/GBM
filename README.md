@@ -125,3 +125,12 @@ Contributions and issues are welcome (especially new scalar-field use cases outs
 **Authors (paper order):** Anh-Duy Pham, Sabrina Hempel, Ali Alaei, Abhijith Srinivas Bidaralli, David Janke, Thomas Amon, Martin Atzmueller, Tim Römer.
 
 Maintained by the GMB team (2026).
+
+## Badges (add once repo is public)
+<!-- [![CI](https://github.com/a11to1n3/GBM/actions/workflows/ci.yml/badge.svg)](https://github.com/a11to1n1/GBM/actions) -->
+<!-- [![PyPI](https://img.shields.io/pypi/v/gbm.svg)](https://pypi.org/project/gbm) -->
+<!-- [![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
+
+## Quick links for the paper
+- Data & full results: Zenodo (DOIs to be inserted in Data Availability paragraph)
+- Paper repo: (authors' separate manuscript repository)

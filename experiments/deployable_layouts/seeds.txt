@@ -1,0 +1,2 @@
+# Reproducibility seeds for this family (see family README)
+np.random.seed(42)
