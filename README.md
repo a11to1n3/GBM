@@ -1,8 +1,8 @@
-# GMB — Gradient-Based Mapper
+# GBM — Gradient-Based Mapper
 
 **Topology-constrained optimisation for gas sensor placement in naturally ventilated livestock buildings.**
 
-GMB (Gradient-Based Mapper) is a practical, geometry-aware method for choosing a small fixed set of k sensor locations (or sampling points) that reliably estimate the spatial mean of a scalar field (e.g. CO₂ or NH₃ concentration) across an entire barn volume or monitoring plane. It combines **coordinate-projection Mapper covers** (overlapping strips or D−1 pillars) with a **projected value-subgradient refinement** heuristic and aggregates scenario-specific candidates into one deployable layout via k-means.
+GBM (Gradient-Based Mapper) is a practical, geometry-aware method for choosing a small fixed set of k sensor locations (or sampling points) that reliably estimate the spatial mean of a scalar field (e.g. CO₂ or NH₃ concentration) across an entire barn volume or monitoring plane. It combines **coordinate-projection Mapper covers** (overlapping strips or D−1 pillars) with a **projected value-subgradient refinement** heuristic and aggregates scenario-specific candidates into one deployable layout via k-means.
 
 The same formulation works for any scalar field; the paper evaluates it on high-fidelity CFD data for both CO₂ (broad respiration plumes) and NH₃ (localised sources) under dozens of ventilation states.
 
