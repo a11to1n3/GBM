@@ -17,8 +17,8 @@ See the individual `experiments/*/README.md` files. Each family documents:
 - HPO / sensitivity / robustness: documented `np.random.seed(42)` + torch seeds
 - All per-scenario optimizations were run once (single stored stochastic run)
 
-## Data Availability statement (ready for paper)
-"Code, seeds, hyperparameters, and minimal data subsets are available at https://github.com/a11to1n3/GBM. Full CFD scenarios and complete per-scenario result JSONs are archived on Zenodo (DOIs: [insert once confirmed]). Exact commands to regenerate every figure and table appear in the `experiments/` directory of the repository."
+## Data Availability statement (ready for paper / response letter)
+The high-fidelity CFD dataset analysed in this study is publicly available on Zenodo at \citep{CFDdata}. Code, seeds, hyperparameters, and minimal data subsets are available at https://github.com/a11to1n3/GBM. Processed result tables and figure data will be archived with the accepted article. Exact commands to regenerate every figure and table appear in the `experiments/` directory of this repository.
 
 ## Environment
 Python >= 3.11 + the dependencies in `pyproject.toml` (torch CPU/CUDA wheels documented in docs/getting_started.md).

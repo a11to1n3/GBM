@@ -90,7 +90,7 @@ Each `experiments/<family>/` directory is self-contained (own README, `run.sh` /
 3. All random seeds, HPO settings, and exact commands are documented per experiment family.
 4. Figures/tables are regenerated from `results/aggregates/`.
 
-**Data & full results:** The 242 combined CFD scenarios (~50 GB) and the complete set of per-scenario JSON outputs for all methods are published on Zenodo. See `data/README.md` and each experiment `README.md` for DOIs and download instructions.
+**Data & Code Availability:** The high-fidelity CFD dataset is publicly available on Zenodo (\citep{CFDdata} in the paper). The complete per-scenario result JSONs and processed figure data will be archived with the accepted article. Code, seeds, minimal data subsets, and experiment reproduction instructions are available in this repository (https://github.com/a11to1n3/GBM). See `data/README.md`, `docs/reproducibility.md`, and the per-family READMEs in `experiments/` for details.
 
 ## Citation
 
