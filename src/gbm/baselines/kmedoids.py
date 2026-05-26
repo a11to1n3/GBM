@@ -133,3 +133,109 @@ def find_optimal_k_points_kmedoids_2D(
 
     final_loss = float(loss.detach().cpu().numpy())
     return final_loss, float(loss_array.mean()), float(loss_array.std()), min_pos
+
+
+
+def find_optimal_k_points_kmedoids_3D(
+    nodes_df: pd.DataFrame,
+    barn_inside_points: np.ndarray,
+    k: int,
+    in_CO2_avg: float,
+    lr: float = 5e-7,
+    epochs: int = 20,
+    sampling_budget: int = 10000,
+    neighborhood_numbers: int = 5,
+    barn_LW_ratio: int = 2,
+    downsample: int = 2000,
+) -> Optional[Tuple[float, float, float, List[List[float]]]]:
+    """k-medoids + value-subgradient refinement (3D) — full port."""
+    nodes_df.loc[~barn_inside_points.flatten().astype(bool), :] = 1e9
+    n_total = len(nodes_df)
+    W, H_img = 100 * barn_LW_ratio, 100
+    if n_total % (W * H_img) != 0:
+        return None
+    D = n_total // (W * H_img)
+
+    interior_mask = nodes_df["X"] < 1e8
+    interior = nodes_df[interior_mask]
+    n_interior = len(interior)
+    if n_interior == 0:
+        return None
+
+    if n_interior > downsample:
+        idx = np.random.choice(n_interior, downsample, replace=False)
+        sample = interior.iloc[idx]
+    else:
+        sample = interior
+
+    pts = sample[["X", "Y", "Z"]].values.astype(np.float32)
+    labels_samp = _kmedoids_fit(pts, k)
+
+    # Assign all interior points to nearest medoid
+    medoids = pts[np.unique(labels_samp)]
+    all_pts = nodes_df[["X", "Y", "Z"]].values
+    interior_idx = np.where(interior_mask)[0]
+    interior_pts = all_pts[interior_idx]
+
+    from sklearn.metrics import pairwise_distances_argmin_min
+    labels_all, _ = pairwise_distances_argmin_min(interior_pts, medoids)
+
+    C_arr = nodes_df["Carbon"].values.reshape(W, H_img, D)
+    X_arr = nodes_df["X"].values.reshape(W, H_img, D)
+    Y_arr = nodes_df["Y"].values.reshape(W, H_img, D)
+    Z_arr = nodes_df["Z"].values.reshape(W, H_img, D)
+
+    full_labels = np.full(n_total, -1, dtype=np.int32)
+    full_labels[interior_idx[:len(labels_all)]] = labels_all[:len(interior_idx)]
+
+    cluster_mask = np.zeros((W, H_img, D, k), dtype=bool)
+    for j in range(k):
+        pm = (full_labels == j)
+        if pm.any():
+            idx = np.unravel_index(np.where(pm)[0], (W, H_img, D))
+            cluster_mask[idx[0], idx[1], idx[2], j] = True
+
+    cluster_pools = []
+    for j in range(k):
+        pool = C_arr.copy()
+        pool[~cluster_mask[:, :, :, j]] = 1e9
+        cluster_pools.append(pool)
+
+    import torch
+    p_list = []
+    for j in range(k):
+        v = cluster_pools[j][cluster_pools[j] < 1e9]
+        p_list.append(torch.tensor(float(np.median(v)) if len(v) > 0 else 0.0, requires_grad=True))
+
+    opt = torch.optim.RMSprop(p_list, lr=lr)
+    for _ in range(epochs):
+        s = torch.stack(p_list).sum()
+        loss = torch.nn.functional.l1_loss(s / k, torch.tensor(float(in_CO2_avg)))
+        opt.zero_grad()
+        loss.backward()
+        opt.step()
+
+    # Final positions — snap using the optimized target values
+    min_locs = []
+    for j in range(k):
+        cp = cluster_pools[j].ravel()
+        vi = np.where(cp < 1e9)[0]
+        if len(vi) == 0:
+            continue
+        vv = cp[vi]
+        tgt = p_list[j].detach().numpy()
+        best_local = vi[np.argmin(np.abs(vv - tgt))]
+        min_locs.append(np.unravel_index(best_local, (W, H_img, D)))
+
+    if len(min_locs) != k:
+        return None
+
+    min_pos = [[float(X_arr[ml[0], ml[1], ml[2]]),
+                float(Y_arr[ml[0], ml[1], ml[2]]),
+                float(Z_arr[ml[0], ml[1], ml[2]])] for ml in min_locs]
+
+    combo_arr = sample_neighboring_points_3D_fast(min_locs, neighborhood_numbers, W, H_img, D, sampling_budget)
+    vals = C_arr[combo_arr[:, :, 0], combo_arr[:, :, 1], combo_arr[:, :, 2]]
+    la = np.abs(vals.mean(axis=1) - in_CO2_avg)
+
+    return float(loss.detach().cpu().numpy()), float(la.mean()), float(la.std()), min_pos

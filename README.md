@@ -134,3 +134,14 @@ Maintained by the GMB team (2026).
 ## Quick links for the paper
 - Data & full results: Zenodo (DOIs to be inserted in Data Availability paragraph)
 - Paper repo: (authors' separate manuscript repository)
+
+## Reproducing the Paper
+
+To reproduce the results, tables, and figures from the manuscript:
+
+1. Install the package: `pip install -e ".[torch,plotting]"` (or `uv pip install ...`)
+2. Follow the reproduction instructions in the relevant family under `experiments/` (e.g. `experiments/deployable_layouts/README.md` for the main deployable-layout heatmaps and rankings).
+3. Use the seeds in the per-family `seeds.txt` files and the exact commands documented there.
+4. Small synthetic examples and the `examples/` notebooks can be used for quick validation without the full dataset.
+
+See `docs/reproducibility.md` and `STATUS.md` for a summary of the current state and ready-to-paste text for the paper.
