@@ -1,4 +1,4 @@
-# Getting Started with GMB
+# Getting Started with GBM
 
 ## Installation
 
@@ -19,7 +19,7 @@ See `pyproject.toml` for the exact torch version requirement (hard dependency).
 python -c "
 from gbm.core import find_optimal_k_points_gbm_2D
 from gbm.utils import factor_k_for_3D
-print('GMB core import OK')
+print('GBM core import OK')
 print('factor_k_for_3D(8,4)=', factor_k_for_3D(8, 4.0))
 "
 ```

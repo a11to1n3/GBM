@@ -17,7 +17,7 @@ This family produces the main result tables and heatmaps of the paper:
 
 ## Reproduction steps (high level)
 ```bash
-# From GMB root (after installing the package)
+# From the repo root (after installing the package)
 python -m experiments.deployable_layouts.run \
     --results-root ../results \
     --k 5,10,20 \

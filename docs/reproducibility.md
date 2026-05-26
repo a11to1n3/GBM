@@ -3,8 +3,8 @@
 ## Core claim
 All numbers, tables, and figures in the COMPAG revision (COMPAG-D-26-02203) can be regenerated from:
 
-- This GMB repository (code + minimal data + experiment scripts)
-- The full 242-scenario BeLuVa CFD data + complete result JSONs published on Zenodo (see data/README.md for DOIs)
+- This GBM repository (code + minimal data + experiment scripts)
+- The full 242-scenario BeLuVa CFD data + complete result JSONs published on Zenodo (see `data/README.md` for DOIs)
 
 ## Exact reproduction steps per paper section
 See the individual `experiments/*/README.md` files. Each family documents:

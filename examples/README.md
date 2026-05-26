@@ -1,27 +1,33 @@
-# GMB Examples
+# GBM Examples
 
 This directory contains runnable examples demonstrating the Gradient-Based Mapper (GBM) method.
 
 ## Notebooks
 
-- `01_quickstart_synthetic.ipynb` — Basic usage of `find_optimal_k_points_gbm_2D` on synthetic data. Good starting point.
+- `01_quickstart_synthetic.ipynb` — Basic usage of GBM on synthetic 2D data. Good starting point.
+- `02_gbm_vs_baselines.ipynb` — Quick comparison of GBM against selected baselines.
+- `03_3d_gbm_quickstart.ipynb` — Basic 3D GBM (D-1 pillars) on synthetic volume data.
+- `04_3d_baselines_comparison.ipynb` — GBM-3D vs several 3D baselines.
+- `05_3d_full_baseline_sweep.ipynb` — Full side-by-side comparison of GBM-3D vs all currently available 3D baselines.
+- `06_3d_runtime_benchmark.ipynb` — Wall-clock timing comparison across 3D methods.
+- `07_kmedoids_3d_demo.ipynb` — Minimal demo of the kmedoids 3D implementation.
 
 ## Python Scripts
 
-(Coming soon — simple scripts will be added alongside notebooks.)
+- `quickstart.py` — Plain Python equivalent of the first notebook (no Jupyter required).
 
-## Running the Notebooks
+## Running the Examples
 
 ```bash
-pip install -e ".[dev]"   # or at least jupyter + the core deps
-jupyter notebook
+pip install -e ".[dev]"     # or at minimum the core dependencies + jupyter
+jupyter notebook            # or run the .py scripts directly
 ```
 
-All examples use only synthetic data so they run without any external CFD files.
+All examples use only synthetic data, so they run without any external CFD files.
 
-## Goal
+## Purpose
 
-These examples are intentionally minimal and self-contained so you can understand the core API quickly without needing the full 242-scenario dataset from Zenodo.
+These examples are intentionally minimal and self-contained. They let you understand the core GBM API and the newly ported 3D baselines quickly, without needing the full 242-scenario Zenodo dataset.
 
 ## New 3D Notebooks (added to exercise the newly ported 3D baselines)
 

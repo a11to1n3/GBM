@@ -1,4 +1,4 @@
-# GMB Repository Status (for Paper Revision COMPAG-D-26-02203)
+# GBM Repository Status (for Paper Revision COMPAG-D-26-02203)
 
 **Last updated:** 2026-05-26
 
@@ -20,11 +20,10 @@
 - Ready-to-paste LaTeX paragraph available
 
 ## Known Open Items (local)
-- kmedoids_3D function has been appended to the baselines file
-- Push to GitHub successful (https://github.com/a11to1n3/GBM)
-- Add final Zenodo DOIs for full results when available
+- Push to GitHub is up to date.
+- Final Zenodo DOIs for the complete results archive should be added when available.
 
 ## Next for Paper Submission
-1. Paste the paragraph from `docs/paper_data_availability.tex` into the manuscript / response letter
-2. Add the final GitHub URL + any result DOIs
-3. (Optional) Add a short "Code Availability" sentence in the main text if the journal requests it
+1. Copy the text from `docs/paper_data_availability.tex` into the manuscript or response letter.
+2. Insert the final GitHub URL and Zenodo DOIs once confirmed.
+3. (Optional) Add a short “Code Availability” sentence in the main text if the journal style requires it.
