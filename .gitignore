@@ -1,0 +1,204 @@
+# GBM (Gradient-Based Mapper) - Clean repository .gitignore
+# Nuclear policy for large artifacts + research clutter
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff (if any future web)
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Cython
+cython_debug/
+
+# GBM-specific: large data, results, generated artifacts, research clutter
+results/
+results_fair/
+results_nh3/
+results_backups/
+tmp/
+revision_from_zip_*/
+Gradient-based-Mapper/
+Gradient_based_Mapper.zip
+
+# Full CFD data (hosted on Zenodo)
+data/scenarios/
+data/Data/
+data/*.7z
+data/*.csv
+data/*.log
+
+# Generated figures, logs, LaTeX intermediates, accuracy outputs
+*.pdf
+*.png
+*.log
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.spl
+*.synctex*
+accuracy_*.txt
+deploy_*.txt
+deploy_*.json
+highlights_*.txt
+missing_*.txt
+runtime_benchmark.json
+combine*.log
+fill_*.log
+local_*.log
+tda_*.log
+final_*.log
+
+# Backups and editor junk
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+
+# IDE / editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# uv / modern Python lock (keep uv.lock in repo, but ignore local env)
+# uv.lock is committed for reproducibility
