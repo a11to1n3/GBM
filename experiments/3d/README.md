@@ -15,19 +15,19 @@ See `gbm/utils.py:factor_k_for_3D` and the paper (Definition 2 + Theorem 1).
 For a target k and LW ratio we choose k_x, k_z such that k_x * k_z ≈ k and k_x/k_z ≈ LW. This produces vertical full-height pillars. Optimisation then selects one (X,Y,Z) location per pillar (Y is chosen freely from the data inside the pillar).
 
 ## Reproduction
-See the family `run.sh` (or the port of the old `run_3d_pipeline.sh` / slurm scripts).
+See the family `run.sh` (or the port of the original pipeline scripts).
 
-Typical command (via the unified CLI once Phase 2 is complete):
+Typical command:
 ```bash
 gbm run data/examples/LW4_....csv --method gbm --dim 3D --gas CO2 --cross-section XZ --k 5,10,20
 ```
 
 ## Key outputs
-- Per-scenario JSONs under `results/tda-mapper/` (with 3dXZ / 3d etc. suffixes) and the corresponding baseline dirs.
+- Per-scenario JSONs (with appropriate suffixes such as 3dXZ) and the corresponding baseline directories.
 - 3D-specific plots and tables (loss distributions, deployable MAE, runtime, etc.).
 
 ## Seeds
-Documented in `seeds.txt` (to be added) + the individual searcher calls (np.random, torch, etc.).
+Documented in `seeds.txt` + the individual searcher calls (np.random, torch, etc.).
 
 ## Data note
 Full 3D runs are heavy. Use the small example scenarios in `../data/examples/` + the synthetic generator for development and CI. The complete result set is in the Zenodo archive.

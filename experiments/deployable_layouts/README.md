@@ -25,7 +25,7 @@ python -m experiments.deployable_layouts.run \
     --out ../results/aggregates/deploy_results_all.json
 ```
 
-See the actual runner (to be ported from the old `deploy_*.py` scripts) and the family `run.sh` / Makefile for exact flags and seeds.
+See the family `run.sh` / Makefile (and any runner in the directory) for exact flags and seeds.
 
 ## Seeds & determinism
 - KMeans: `random_state=0` (or 42 in some variants — documented in the script).
