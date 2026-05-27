@@ -101,7 +101,7 @@ See `docs/reproducibility.md` for a detailed reproducibility checklist and ready
 
 The high-fidelity CFD dataset is publicly available on Zenodo (cited as \citep{CFDdata} in the paper).  
 Code, seeds, hyperparameters, minimal data subsets, and full experiment reproduction instructions are available at https://github.com/a11to1n3/GBM.  
-Processed result tables and figure data will be archived with the accepted article.
+Processed result tables and figure data will be given on request.
 
 ## Citation
 

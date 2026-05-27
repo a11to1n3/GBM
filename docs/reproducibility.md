@@ -42,7 +42,7 @@ pip install -e ".[torch,plotting]"
 CUDA wheels are only needed for the heaviest full-suite runs; the code itself is small.
 
 ## Data Availability statement (ready to paste into the paper or response letter)
-The high-fidelity CFD dataset analysed in this study is publicly available on Zenodo at \citep{CFDdata}. Code, seeds, hyperparameters, and minimal data subsets are available at https://github.com/a11to1n3/GBM. Processed result tables and figure data will be archived with the accepted article. Exact commands to regenerate every figure and table appear in the `experiments/` directory of this repository.
+The high-fidelity CFD dataset analysed in this study is publicly available on Zenodo at \citep{CFDdata}. Code, seeds, hyperparameters, and minimal data subsets are available at https://github.com/a11to1n3/GBM. Processed result tables and figure data will be given on request. Exact commands to regenerate every figure and table appear in the `experiments/` directory of this repository.
 
 ## Paper-ready LaTeX block (Data & Code Availability)
 ```latex
