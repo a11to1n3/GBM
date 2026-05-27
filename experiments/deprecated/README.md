@@ -17,12 +17,9 @@ The revision explicitly removed DBSCAN / outlier filtering from the GBM pipeline
 - The ablation JSONs and plots from the exploratory phase are still referenced in the response letter and some early figures.
 
 ## How to use (if you really must)
-Do **not** use for new work. The modern entry points are `gbm.core.find_optimal_k_points_gbm_2D` / `..._3D`.
+Do **not** use for new work. The modern entry points are `gbm.core.find_optimal_k_points_gbm_2D` / `..._3D`. 
 
-If you need to re-run the old ablation for comparison:
-```bash
-python -m experiments.deprecated.run_old_ablation ...
-```
+The old ablation scripts are kept only for historical reference.
 
 ## Migration notes
 - The barn_inside heuristic and grid handling were centralised in `gbm/data.py`.

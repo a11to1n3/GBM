@@ -17,7 +17,7 @@ All variants are exercised here.
 For NH₃, no single method dominates every LW/k cell. The paper deliberately calls this out with outlined cells in the heatmaps and balanced interpretation in the text and response letter.
 
 ## Reproduction
-Same pattern as the 3D family, but with `--gas NH3` (or the NH₃-specific scripts from the old `nh3_*.sh` collection, now consolidated here).
+Same pattern as the 3D family, but with `--gas NH3`.
 
 Plume-only evaluation is performed in the deployable-layout post-processing step (threshold > 1% of per-scenario max concentration).
 

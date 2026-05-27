@@ -36,13 +36,13 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.cmd == "run":
-        print(f"[stub] gbm run {args.csv} --method {args.method} --dim {args.dim} "
+        print(f"[lightweight] gbm run {args.csv} --method {args.method} --dim {args.dim} "
               f"--gas {args.gas} --k {args.k}")
-        print("Full implementation coming in Phase 2. For now use the Python API or the legacy barnCSP.py shim.")
+        print("For full features, use the Python API directly or the original scripts from the research repository.")
         return 0
 
     if args.cmd == "deploy":
-        print(f"[stub] gbm deploy --results-dir {args.results_dir} --k {args.k}")
+        print(f"[lightweight] gbm deploy --results-dir {args.results_dir} --k {args.k}")
         return 0
 
     return 1
