@@ -1,4 +1,5 @@
 #!/bin/bash
 set -e
-echo "[${fam}] Experiment runner stub — port drivers from original BarnCSP here"
-echo "See ../README.md and data/README.md for Zenodo data"
+echo "[deployable_layouts] Fixed-layout aggregation + MAE evaluation"
+echo "See README.md for usage or run the Python driver directly:"
+echo "  python -m experiments.deployable_layouts.run --help"

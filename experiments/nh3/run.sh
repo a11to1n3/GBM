@@ -1,4 +1,5 @@
 #!/bin/bash
 set -e
-echo "[${fam}] Experiment runner stub — port drivers from original BarnCSP here"
-echo "See ../README.md and data/README.md for Zenodo data"
+echo "[nh3] NH3 (2D + 3D) experiments"
+echo "See README.md for reproduction commands and seeds."
+echo "Full results on Zenodo (see ../data/README.md)."

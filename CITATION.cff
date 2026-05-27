@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "GMB: Gradient-Based Mapper for Gas Sensor Placement"
+title: "GBM: Gradient-Based Mapper for Gas Sensor Placement"
 message: "If you use this software, please cite the paper."
 type: software
 authors:
