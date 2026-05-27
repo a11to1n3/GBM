@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "GBM: Gradient-Based Mapper for Gas Sensor Placement"
+message: "If you use this software, please cite the paper."
+type: software
+authors:
+  - family-names: Pham
+    given-names: Anh-Duy
+  - family-names: Hempel
+    given-names: Sabrina
+  - family-names: Alaei
+    given-names: Ali
+  - family-names: Bidaralli
+    given-names: Abhijith Srinivas
+  - family-names: Janke
+    given-names: David
+  - family-names: Amon
+    given-names: Thomas
+  - family-names: Atzmueller
+    given-names: Martin
+  - family-names: Römer
+    given-names: Tim
+repository-code: "https://github.com/a11to1n3/GBM"
+license: Apache-2.0

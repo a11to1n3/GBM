@@ -1,0 +1,4 @@
+# Seeds used for 2D CO2 experiments
+np.random.seed(42)
+torch.manual_seed(42)
+KMeans random_state=0
