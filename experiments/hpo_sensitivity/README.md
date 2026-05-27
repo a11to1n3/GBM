@@ -1,21 +1,29 @@
 # HPO & Sensitivity Experiments
 
-SMAC3 + grid sweeps over GBM hyperparameters (overlap percentage, learning rate, epochs) for both 2D and 3D.
+Grid sweeps (and optionally SMAC3) over GBM hyperparameters (overlap, learning rate, epochs) on 2D and 3D synthetic or real data.
 
 ## Status
-This family is planned / empty. No driver has been ported yet.
+This family now contains a thin, clean grid-sweep driver (`sweep.py`) that uses only the modern GBM public API.
 
-The original HPO / sensitivity runs that appear in the paper (and the associated JSONs) were produced with the historical `hpo.py`, `sensitivity_analysis.py`, and SMAC3 configuration scripts from the BarnCSP checkout.
+The full SMAC3 HPO runs and the exact sensitivity numbers that appear in the paper were produced with the historical `hpo.py` / `sensitivity_analysis.py` + the full Zenodo scenario set. Those scripts and the resulting JSONs live in the Zenodo archives and the original BarnCSP checkout.
 
-## Current practical path
-- The sensitivity results used in the revision are archived in the Zenodo result sets (see `data/README.md`).
-- For new work, the clean GBM Python API (`gbm.core.find_optimal_k_points_gbm_*`) plus the synthetic generator in `data/synthetic/` can be used to reproduce the spirit of the sweeps quickly.
+## Usage
 
-## Seeds
-Original runs used `np.random.seed(42)` + torch seeds (documented in the historical logs).
+```bash
+# Quick synthetic sensitivity sweep (no external data)
+python -m experiments.hpo_sensitivity.sweep \
+    --dim 3D \
+    --k 5,10 \
+    --out results/aggregates/sensitivity_smoke.json
+```
+
+The driver sweeps a small grid over overlap / lr / epochs and records mean neighbor sensitivity loss.
+
+## Extending to SMAC3
+If you have `smac` installed (`pip install "gbm[hpo]"`), you can add a small SMAC3 wrapper in this directory that calls the same clean `gbm.core` entry points. The original `hpo.py` can serve as a reference for the search space and in-process evaluation pattern.
 
 ## Paper references
-- Sensitivity analysis sections and supplementary figures in the COMPAG revision.
-- Hyper-parameter robustness discussion.
+- Sensitivity analysis sections and HPO discussion in the COMPAG revision.
+- The published sensitivity / HPO JSONs are part of the Zenodo result archives.
 
-A minimal driver matching the style of `deployable_layouts/run.py` will be added in a future increment.
+This is the third driver of the "next batch" of clean ports.

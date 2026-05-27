@@ -1,17 +1,40 @@
 # Runtime Benchmark Experiments
 
-Wall-clock timing measurements of GBM and the eight baselines (2D and 3D) on representative scenario sizes.
+Wall-clock timing of GBM and the eight baselines on representative 2D/3D synthetic volumes.
 
 ## Status
-This family is planned / empty. No driver has been ported yet.
+This family now contains a thin, clean driver (`run.py`) that exercises the modern GBM public API.
 
-The runtime numbers and the `bench_runtime*.py` scripts that produced the published timing tables live in the historical BarnCSP checkout.
+The numbers that appear in the published paper were produced with the historical `bench_runtime*.py` scripts + the full Zenodo scenario set. The driver here lets you reproduce the *methodology* quickly and reproducibly with the clean package (useful for regression testing and new timing claims).
 
-## Current practical path
-- Published runtime tables are part of the Zenodo result set.
-- The notebook `examples/06_3d_runtime_benchmark.ipynb` already exercises the clean 3D implementations on synthetic data and can be used for quick regression checks or new timing experiments.
+## Usage
 
-## Paper references
-- Runtime claims and any timing tables/figures in the COMPAG revision (and response letter).
+```bash
+# 3D timing (default)
+python -m experiments.runtime_benchmark.run \
+    --dim 3D \
+    --k 5,10,20 \
+    --repeats 3 \
+    --out results/aggregates/runtime_3d_smoke.json
 
-A thin driver + reproducible timing harness will be added when this family is prioritised.
+# 2D timing
+python -m experiments.runtime_benchmark.run \
+    --dim 2D \
+    --k 5,10 \
+    --repeats 5 \
+    --out results/aggregates/runtime_2d.json
+```
+
+Output is a compact JSON with median wall-clock seconds per (method, k).
+
+## Methods timed (extendable)
+- GBM (2D X or 3D XZ)
+- Greedy, KMC+GBO (kmedoids), Uniform (others can be added in one line)
+
+## Seeds / determinism
+Synthetic data is generated deterministically inside the driver for the current run. The GBM / baseline calls use their documented default seeds.
+
+## Relation to the paper
+See the runtime claims and any timing tables/figures in the COMPAG revision (and the original `bench_runtime*.py` logs in the historical checkout).
+
+This is the second driver of the "next batch" port (following `robustness/`).
