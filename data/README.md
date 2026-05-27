@@ -11,7 +11,7 @@ The complete set of 242 combined CFD scenarios (LW2/3/4, all ventilation states)
 - Combined 3D scenario CSVs used by all GBM experiments.
 - DOIs and record URLs are listed in the paper’s Data Availability statement and in the experiment-family READMEs.
 
-**Download script** (`download_full.sh` or `python -m gbm.data.download`) will be added once the final Zenodo record IDs are confirmed.
+A small helper script (`download_full.sh` or `python -m gbm.data.download`) will be added once the final Zenodo record IDs are confirmed. In the meantime the DOIs and direct links are listed in the paper Data Availability statement and in every experiment-family README.
 
 ## Results
 All raw per-scenario JSON outputs and the aggregated files needed for the paper (`deploy_results_all.json`, ranking tables, etc.) are published on Zenodo.

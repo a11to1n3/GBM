@@ -1,8 +1,9 @@
 """
-GMB command-line interface (stub — Phase 2/3 work in progress).
+GBM command-line interface (lightweight).
 
-Future full version will dispatch to the unified runner for all methods (GBM + baselines)
-and support the deploy / analysis commands.
+This CLI is intentionally minimal. For full features and all experiment
+drivers use the Python API directly (see experiments/*/README.md and the
+notebooks in examples/).
 """
 
 import argparse
@@ -20,7 +21,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     sub = parser.add_subparsers(dest="cmd", required=True)
 
-    p_run = sub.add_parser("run", help="Run one method on one scenario (stub)")
+    p_run = sub.add_parser("run", help="Run one method on one scenario (lightweight CLI)")
     p_run.add_argument("csv")
     p_run.add_argument("--method", "-c", default="gbm", choices=KNOWN_METHODS)
     p_run.add_argument("--dim", "-d", choices=["2D", "3D"], default="3D")
@@ -29,7 +30,7 @@ def main(argv: list[str] | None = None) -> int:
     p_run.add_argument("--k", default="5,10,20")
     p_run.add_argument("--force", action="store_true")
 
-    p_deploy = sub.add_parser("deploy", help="Compute fixed deployable layouts (stub)")
+    p_deploy = sub.add_parser("deploy", help="Compute fixed deployable layouts (lightweight CLI)")
     p_deploy.add_argument("--results-dir", default="results")
     p_deploy.add_argument("--k", default="5,10,20")
 
@@ -38,7 +39,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "run":
         print(f"[lightweight] gbm run {args.csv} --method {args.method} --dim {args.dim} "
               f"--gas {args.gas} --k {args.k}")
-        print("For full features, use the Python API directly or the original scripts from the research repository.")
+        print("For full features, use the Python API directly.")
         return 0
 
     if args.cmd == "deploy":

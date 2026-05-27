@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Statistical Analysis Driver (clean port for GMB repo).
+Statistical Analysis Driver (clean port for GBM repo).
 
 Core logic for Wilcoxon signed-rank tests, Cliff's delta, and basic ranking
 on the deployable-layout results.

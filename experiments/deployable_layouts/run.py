@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Deployable Layouts Driver (clean port for the GMB repo).
+Deployable Layouts Driver (clean port for the GBM repo).
 
 Core logic extracted and adapted from the original deploy_fixed_layout.py
 and related scripts.

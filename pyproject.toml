@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gbm"
 version = "0.1.0.dev0"
-description = "Gradient-Based Mapper (GMB) — topology-constrained sensor placement for scalar fields in ventilated buildings"
+description = "Gradient-Based Mapper (GBM) — topology-constrained sensor placement for scalar fields in ventilated buildings"
 readme = "README.md"
 license = {text = "Apache-2.0"}
 authors = [
@@ -43,7 +43,7 @@ hpo = ["smac>=2.0", "ConfigSpace>=0.7"]
 dev = ["ruff>=0.4", "pre-commit>=3.5"]
 
 [project.scripts]
-gbm = "gbm.cli:main"   # CLI added in Phase 2
+gbm = "gbm.cli:main"   # lightweight CLI (intentionally minimal)
 
 [tool.setuptools.packages.find]
 where = ["src"]

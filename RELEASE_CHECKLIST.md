@@ -1,4 +1,4 @@
-# GMB Release Checklist
+# GBM Release Checklist
 
 Use this checklist before tagging a new release or paper submission snapshot.
 

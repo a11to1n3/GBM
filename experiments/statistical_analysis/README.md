@@ -13,7 +13,7 @@ python -m experiments.statistical_analysis.compute \
     --out results/aggregates/ranking_tables.tex
 ```
 
-For the full set of tests and diagrams that appear in the paper (including sensitivity, ablation, and robustness), the original `statistical_analysis.py` and `accuracy_table.py` can be used as reference and gradually ported here.
+For the full set of tests and diagrams that appear in the paper (including sensitivity, ablation, and robustness), the original `statistical_analysis.py` and `accuracy_table.py` remain available in the historical BarnCSP checkout for reference. The core Wilcoxon + ranking driver has been ported here (`compute.py`).
 
 ## Data
 Requires the compact deploy matrix produced by `experiments/deployable_layouts/run.py`.
