@@ -50,3 +50,8 @@ Useful for reproducing runtime claims and quick performance regression testing.
 - `07_kmedoids_3d_demo.ipynb` — Minimal demo of the newly added `kmedoids_3D` (PAM + subgradient) compared to GBM 3D on synthetic volume data.
 
 This notebook directly exercises the last 3D baseline piece.
+
+### New 3D Sensitivity Analysis Notebook
+- `08_3d_sensitivity.ipynb` — Sweeps overlap, lr, and epochs for GBM-3D on synthetic data and produces simple sensitivity plots (mean neighbor loss).
+
+This directly addresses the request for a sensitivity analysis notebook in 3D.
