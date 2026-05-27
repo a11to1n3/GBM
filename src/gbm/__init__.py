@@ -1,5 +1,5 @@
 """
-GMB — Gradient-Based Mapper (public package root).
+GBM — Gradient-Based Mapper (public package root).
 
 Quick import:
     from gbm.core import find_optimal_k_points_gbm_2D

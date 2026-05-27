@@ -1,5 +1,5 @@
 """
-GMB (Gradient-Based Mapper) — Shared utilities.
+GBM (Gradient-Based Mapper) — Shared utilities.
 
 This module contains the low-level helpers used by the core GBM method
 and the comparison baselines:

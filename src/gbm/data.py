@@ -1,5 +1,5 @@
 """
-Centralised data loading and barn-interior masking for GMB.
+Centralised data loading and barn-interior masking for GBM.
 
 All experiment scripts should eventually go through the functions here
 instead of duplicating the barn_inside heuristic + CSV renaming logic.
