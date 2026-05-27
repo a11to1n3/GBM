@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GMB Quickstart Example (Python script version)
+GBM Quickstart Example (Python script version)
 
 Demonstrates the core Gradient-Based Mapper (GBM) API using only synthetic data.
 No external CFD files required.
@@ -14,7 +14,7 @@ from gbm.utils import factor_k_for_3D
 
 
 def main():
-    print("GMB Quickstart — Synthetic 2D Example")
+    print("GBM Quickstart — Synthetic 2D Example")
     print("=" * 50)
 
     # 1. Create a simple synthetic 2D concentration field

@@ -12,7 +12,7 @@ This script:
 - Evaluates full-barn MAE (and plume-only for NH3).
 - Produces a compact deploy_results matrix suitable for plotting/tables.
 
-Usage (from the GMB repo root):
+Usage (from the GBM repo root):
     python -m experiments.deployable_layouts.run \
         --results-root results \
         --k 5,10,20 \

@@ -17,7 +17,7 @@ KNOWN_METHODS = ["gbm", "tda-mapper", "kmedoids", "greedy", "uniform",
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="gbm",
-        description="Gradient-Based Mapper (GMB) — sensor placement for scalar fields",
+        description="Gradient-Based Mapper (GBM) — sensor placement for scalar fields",
     )
     sub = parser.add_subparsers(dest="cmd", required=True)
 

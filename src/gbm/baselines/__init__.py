@@ -1,4 +1,4 @@
-"""GMB Baselines package (8/8 real implementations).
+"""GBM Baselines package (8/8 real implementations).
 
 All baselines now have actual ported code (2D + 3D where available in originals).
 """

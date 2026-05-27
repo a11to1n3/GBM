@@ -1,5 +1,5 @@
 """
-GMB core — the Gradient-Based Mapper method.
+GBM core — the Gradient-Based Mapper method.
 
 Public API (stable):
     find_optimal_k_points_gbm_2D
